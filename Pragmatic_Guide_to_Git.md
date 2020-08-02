@@ -1,6 +1,6 @@
 # Pragmatic Guide to Git
 
-* [1. Getting Started](#getting-started)
+* [1. Getting Started](#1-getting-started)
 	* [Task 1. Installing Git](#task-1-installing-git)
 	* [Task 2. Configuring Git](#Task-2.-Configuring-Git)
 	* [Task 3. Creating a New Repository](#Task-3.-Creating-a-New-Repository)
@@ -61,7 +61,7 @@
 	* [Task 40. Retrieving “Lost” Commits](#Task-40.-Retrieving-“Lost”-Commits)
 
 
-* [Moving Beyond the Basics](#moving-beyond-the-basics)
+* [8. Moving Beyond the Basics](#8-moving-beyond-the-basics)
 	* [Task 41 Exporting Your Repository](#task-41-exporting-your-repository)
 	* [Task 42 Doing Some Git Housekeeping](#task-42-doing-some-git-housekeeping)
 	* [Task 43 Syncing with Subversion](#task-43-syncing-with-subversion)
