@@ -61,14 +61,15 @@
 	* [Task 40. Retrieving “Lost” Commits](#Task-40.-Retrieving-“Lost”-Commits)
 
 
-* [8. Moving Beyond the Basics](#8.-Moving-Beyond-the-Basics)
-	* [Task 41. Exporting Your Repository](#Task-41.-Exporting-Your-Repository)
+* [8. Moving Beyond the Basics](#moving-beyond-the-basics)
+	* [Task 41. Exporting Your Repository](#Task-41.-exporting-your-repository)
 	* [Task 42. Doing Some Git Housekeeping](#Task-42.-Doing-Some-Git-Housekeeping)
 	* [Task 43. Syncing with Subversion](#Task-43.-Syncing-with-Subversion)
-	* [Task 44. Initializing Bare Repositories](#Task-44.-Initializing-Bare-Repositories)
+	* [Task 44. Initializing Bare Repositories](#task-44.-initializing-bare-repositories)
+	* [Task 44. Initializing Bare Repositories](#initializing-bare-repositories)
 
 
-* [9. Glossary](#9.-glossary)
+* [9. Glossary](#glossary)
 
 * [9. Glossary](#glossary)
 
