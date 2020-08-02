@@ -68,7 +68,9 @@
 	* [Task 44. Initializing Bare Repositories](#Task-44.-Initializing-Bare-Repositories)
 
 
-* [9. Glossary](#9.-Glossary)
+* [9. Glossary](#9.-glossary)
+
+* [9. Glossary](#glossary)
 
 * [System design topics: start here](#system-design-topics-start-here)
 
