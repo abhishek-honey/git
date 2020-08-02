@@ -1,7 +1,7 @@
 # Pragmatic Guide to Git
 
-* [1. Getting Started](#1.-Getting-Started)
-	* [Task 1. Installing Git](#Task-1.-Installing-Git)
+* [1. Getting Started](#getting-started)
+	* [Task 1. Installing Git](#task-1-installing-git)
 	* [Task 2. Configuring Git](#Task-2.-Configuring-Git)
 	* [Task 3. Creating a New Repository](#Task-3.-Creating-a-New-Repository)
 	* [Task 4. Creating a Local Copy of an Existing Repository](#Task-4.-Creating-a-Local-Copy-of-an-Existing-Repository)
@@ -61,15 +61,12 @@
 	* [Task 40. Retrieving “Lost” Commits](#Task-40.-Retrieving-“Lost”-Commits)
 
 
-* [8. Moving Beyond the Basics](#moving-beyond-the-basics)
-	* [Task 41. Exporting Your Repository](#Task-41.-exporting-your-repository)
-	* [Task 42. Doing Some Git Housekeeping](#Task-42.-Doing-Some-Git-Housekeeping)
-	* [Task 43 Syncing with Subversion](#Task-43.-Syncing-with-Subversion)
+* [Moving Beyond the Basics](#moving-beyond-the-basics)
+	* [Task 41 Exporting Your Repository](#task-41-exporting-your-repository)
+	* [Task 42 Doing Some Git Housekeeping](#task-42-doing-some-git-housekeeping)
+	* [Task 43 Syncing with Subversion](#task-43-syncing-with-subversion)
 	* [Task 44 Initializing Bare Repositories](#task-44-initializing-bare-repositories)
-	* [Task 44 Initializing Bare Repositories](#initializing-bare-repositories)
 
-
-* [9. Glossary](#glossary)
 
 * [9. Glossary](#glossary)
 
