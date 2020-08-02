@@ -64,9 +64,9 @@
 * [8. Moving Beyond the Basics](#moving-beyond-the-basics)
 	* [Task 41. Exporting Your Repository](#Task-41.-exporting-your-repository)
 	* [Task 42. Doing Some Git Housekeeping](#Task-42.-Doing-Some-Git-Housekeeping)
-	* [Task 43. Syncing with Subversion](#Task-43.-Syncing-with-Subversion)
-	* [Task 44. Initializing Bare Repositories](#task-44.-initializing-bare-repositories)
-	* [Task 44. Initializing Bare Repositories](#initializing-bare-repositories)
+	* [Task 43 Syncing with Subversion](#Task-43.-Syncing-with-Subversion)
+	* [Task 44 Initializing Bare Repositories](#task-44-initializing-bare-repositories)
+	* [Task 44 Initializing Bare Repositories](#initializing-bare-repositories)
 
 
 * [9. Glossary](#glossary)
