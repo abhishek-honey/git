@@ -70,6 +70,8 @@
 
 * [9. Glossary](#9.-Glossary)
 
+* [System design topics: start here](#system-design-topics-start-here)
+
 ## 1. Getting Started
 
 The Git Workflow
@@ -839,3 +841,5 @@ or files.
 * __merge conflict__: A conflict that happens when two commits attempt make changes that cannot be reconciled by automated means. This generally happens during a merge or while replaying commits during a rebase.
 * __non-fast-forward merge__: See recursive merge.
 * __ORIG_HEAD__: Refers to the location of HEAD before making any big changes to it such as running git rebase or git reset.
+
+## System design topics: start here
