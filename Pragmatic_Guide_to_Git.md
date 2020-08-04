@@ -482,22 +482,32 @@ Stage this hunk [y,n,q,a,d,j,J,g,/,e,?]? y
 
  # Pro Git
 +[Notes](Pro_git.md)
- * __In Chapter 1__, we’re going to cover Version Control Systems (VCSs) and Git basics — no technical stuff, just what Git is, why it came about in a land full of VCSs, what sets it apart, and why so many people are using it. Then, we’ll explain how to download Git and set it up for the first time if you don’t already have it on your system.
+ * __In Chapter 1__, we’re going to cover Version Control Systems (VCSs) and Git basics — no technical stuff, just what Git is, why it came about in a land full of VCSs, what sets it apart, and why so many people are using it. Then, we’ll explain how to download Git and set it up for the first time you don’t already have it on your system.
  * __In Chapter 2__, we will go over basic Git usage — how to use Git in the 80% of cases you’ll encounter most often. After reading this chapter, you should be able to clone a repository, see what has happened in the history of the project, modify files, and contribute changes. If the book spontaneously combusts at this point, you should already be pretty useful wielding Git in the time it takes you to go pick up another copy.
  * __Chapter 3__ is about the branching model in Git, often described as Git’s killer feature. Here you’ll learn what truly sets Git apart from the pack. When you’re done, you may feel the need to spend a quiet moment pondering how you lived before Git branching was part of your life.
 Stage this hunk [y,n,q,a,d,K,g,/,e,?]? y
 ```
 
 Related Tasks
-* [Task 5. Seeing What Has Changed](#Task-5.-Seeing-What-Has-Changed)
+* [Task 5. Seeing What Has Changed](#Task-5-Seeing-What-Has-Changed)
 * [Task 7. Committing Changes](#Task-7.-Committing-Changes)
 
 
 
 ### Task 7. Committing Changes
+Git tracks changes to your repository through commits, which you make with the git commit command.
 
+Prior to most commits, you need to stage the files you want to commit using the git add.
 
+Each commit requires a commit message. You can use -m and a string in quotation marks as your message or use Git’s editor to write a message.
 
+You can avoid git add and commit every change in your working tree with the -a parameter. It commits everything you have staged and all the changes to your working tree.
+
+Related Tasks
+* [Task 5. Seeing What Has Changed](#task-5-seeing-what-has-changed)
+* [Task 6. Staging Changes to Commit](#task-6-staging-changes-to-commit)
+* [Task 12. Sharing Changes](#task-12-sharing-changes)
+* [Task 35. Fixing Commits](#ask-35-fixing-commits)
 
 ### Task 8. Ignoring Files
 
