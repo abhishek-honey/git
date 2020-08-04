@@ -86,7 +86,7 @@ Occasionally, I end up with several separate changes that all need to be com- mi
 
 Once I have the feature complete, I give the commits I’ve created a quick review to make sure all the changes are necessary. At this point I look for commits that can be combined and make sure they are in the most logical order.
 
-Finally, once I have those commits ready, I share those commits by push- ing them (push is the term for sending commits to another repository) back upstream to my public repository so the rest of the team can view them and integrate them with their repositories.
+Finally, once I have those commits ready, I share those commits by pushing them (push is the term for sending commits to another repository) back upstream to my public repository so the rest of the team can view them and integrate them with their repositories.
 
 #### Repository Layouts
 * One method is the fully distributed model. In this, each developer has their own public repository that the developer uses to publish their changes to. All the other developers on the team then pull changes from everyone else’s repositories to keep current.
@@ -101,7 +101,7 @@ Finally, once I have those commits ready, I share those commits by push- ing the
 
 	Follow the prompts to install Git.
 
-	Open a terminal and verify the installation was successful by typing git --version:
+	Open a terminal and verify the installation was successful by typing ```git --version```:
 
 	```bash
 	(base) Honeys-Air:git apple$ git version
@@ -228,10 +228,10 @@ Hurray... __90%__ done. Now 1 more thing to __95%__
 
 
 Related Tasks
-* [Task 4. Creating a Local Copy of an Existing Repository](#Task-4.-Creating-a-Local-Copy-of-an-Existing-Repository)
-* [Task 7. Committing Changes](#Task-7.-Committing-Changes)
-* [Task 12. Sharing Changes](#Task-12.-Sharing-Changes)
-* [Task 44. Initializing Bare Repositories](#Task-44.-Initializing-Bare-Repositories)
+* [Task 4. Creating a Local Copy of an Existing Repository](#task-4-creating-a-local-copy-of-an-existing-repository)
+* [Task 7. Committing Changes](#task-7-committing-changes)
+* [Task 12. Sharing Changes](#task-12-sharing-changes)
+* [Task 44 Initializing Bare Repositories](#task-44-initializing-bare-repositories)
 
 ### Task 4. Creating a Local Copy of an Existing Repository
 
@@ -261,9 +261,9 @@ Unpacking objects: 100% (14/14), done.
 ```
 
 Related Tasks
-* [Task 3. Creating a New Repository](#Task-3.-Creating-a-New-Repository)
-* [Task 12. Sharing Changes](#Task-12.-Sharing-Changes)
-* [Task 19. Adding and Removing Remotes](#Task-19.-Adding-and-Removing-Remotes)
+* [Task 3. Creating a New Repository](#task-3-creating-a-new-repository)
+* [Task 12. Sharing Changes](#task-12-sharing-changes)
+* [Task 19. Adding and Removing Remotes](#task-19-adding-and-removing-remotes)
 
 __95%__ done, so now you have got super power of creating your own repository on github, and you can also clone other's repository.
 
@@ -439,9 +439,9 @@ Hope you remember this story of ```git multiverse```, whenever you work with git
 
 
 Related Tasks
-* [Task 3. Creating a New Repository](#Task-3.-Creating-a-New-Repository)
-* [Task 6. Staging Changes to Commit](#Task-6.-Staging-Changes-to-Commit)
-* [Task 7. Committing Changes](#Task-7.-Committing-Changes)
+* [Task 3. Creating a New Repository](#task-3-creating-a-new-repository)
+* [Task 6. Staging Changes to Commit](#task-6-staging-changes-to-commit)
+* [Task 7. Committing Changes](#task-7-committing-changes)
 
 ### Task 6. Staging Changes to Commit
 Git uses a two-step process to get changes into the repository. The first step is staging changes through git add. Staging a change adds it to the index, or staging area. This sits between the working tree—your view of the repository—and the actual repository.
@@ -450,9 +450,9 @@ Through the staging area, you can control what is staged from the most coarse-gr
 
 It uses standard shell-style wildcards, so wildcards work: base.* matches base.rb and base.py.
 
-You can control which parts of a file you commit using the -p parameter. Running this, you’re presented with each section of the file that has changed, and you’re given the opportunity to add or skip it. You can stage the change by pressing y or skip a change with n. s lets you break the change into smaller pieces. This and a few other options aren’t always available. You can press ? inside patch mode to get a list of all the commands and what they do.
+You can control which parts of a file you commit using the ```-p ```parameter. Running this, you’re presented with each section of the file that has changed, and you’re given the opportunity to add or skip it. You can stage the change by pressing y or skip a change with n. s lets you break the change into smaller pieces. This and a few other options aren’t always available. You can press ? inside patch mode to get a list of all the commands and what they do.
 
-Taking the control a step further, you can directly edit the changes that are being staged by using the -e parameter.
+Taking the control a step further, you can directly edit the changes that are being staged by using the ```-e``` parameter.
 
 ```Bash
 #Add all files in the current repository.
@@ -489,19 +489,34 @@ Stage this hunk [y,n,q,a,d,K,g,/,e,?]? y
 ```
 
 Related Tasks
-* [Task 5. Seeing What Has Changed](#Task-5-Seeing-What-Has-Changed)
-* [Task 7. Committing Changes](#Task-7.-Committing-Changes)
+* [Task 5. Seeing What Has Changed](#task-5-seeing-what-has-changed)
+* [Task 7. Committing Changes](#task-7-committing-changes)
 
 
 
 ### Task 7. Committing Changes
-Git tracks changes to your repository through commits, which you make with the git commit command.
+Git tracks changes to your repository through commits, which you make with the ```git commit``` command.
 
-Prior to most commits, you need to stage the files you want to commit using the git add.
+Prior to most commits, you need to stage the files you want to commit using the ```git add```.
 
-Each commit requires a commit message. You can use -m and a string in quotation marks as your message or use Git’s editor to write a message.
+Each commit requires a commit message. You can use ```-m``` and a string in quotation marks as your message or use Git’s editor to write a message.
 
-You can avoid git add and commit every change in your working tree with the -a parameter. It commits everything you have staged and all the changes to your working tree.
+You can avoid git add and commit every change in your working tree with the ```-a``` parameter. It commits everything you have staged and all the changes to your working tree.
+
+```Bash
+# Commit Changes
+(base) Honeys-MacBook-Air:git apple$ git commit -m "Addded multiverse functionality"
+[master 9733860] Addded multiverse functionality
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+# Commit all modified files.
+(base) Honeys-MacBook-Air:git apple$ git commit -m "Addded multiverse functionality" -a
+[master 896d69c] Addded multiverse functionality
+ 1 file changed, 12 insertions(+), 2 deletions(-)
+
+# Commit and launch editor for commit message.
+(base) Honeys-MacBook-Air:git apple$ git commit
+```
 
 Related Tasks
 * [Task 5. Seeing What Has Changed](#task-5-seeing-what-has-changed)
@@ -511,30 +526,139 @@ Related Tasks
 
 ### Task 8. Ignoring Files
 
+Software projects generate a lot of cruft. We don’t need or want some files cluttering up our repository or showing up in git status. That’s where the .gitignore and friends comes in.
 
+Each line of the ```.gitignore``` is scanned, and any matches it finds are ignored by Git. Your ```.gitignore``` file is inside your repository, so you can track it like any other file. You can put it at the top level of your repository, and in that case the rules cascade through all subdirectories. You can also use subdirectory-specific ```.gitignore```, and those rules will only apply to files and directories inside that subdirectory.
 
+Sometimes you don’t want to commit your ```.gitignore``` file to your repository. Maybe you’re be contributing to an open source project—there’s no need to add your unwanted files to the project-wide ```.gitignore```. You have two options in this case: use the ```.git/info/excludes``` file or add the ignore cases to your global excludesfile.
+
+The __.git/info/excludes__ is the same as a ```.gitignore``` file, except it’s not tracked by Git since it’s inside the .git directory. It’s useful for excluding files that are specific to a project without adding a ```.gitignore``` file to the repository.
+
+[Official gitignore docs](https://git-scm.com/docs/gitignore)
 
 
 ### Task 9. Undoing Uncommitted Changes
+Git’s two-step process for tracking a commit means you can have files that are staged for commit that you’re not ready to commit. You use git reset HEAD or ```git rm --cached``` depending on the circumstance.
 
+* Scenario 1: __You staged a change to file and want to unstage it—use__ ```git reset HEAD```. This is the most common use. You’re telling Git, “Change the index—the staging area—to the latest version of this file.”
 
+* Scenario 2: __You have a new file that’s been staged that you don’t want to commit now—use__ ```git rm --cached```. Normally, ```git rm``` is used to remove files from your repository, but adding the ```--cached``` option tells Git to leave your working tree alone.
 
+* Another common problem is making changes that you want to __undo completely.__ You can use ```git checkout``` to do this, but be careful. __git checkout happily removes all untracked changes from a file or directory. You can’t get those changes back if they were never tracked by Git.__
+
+Related Tasks
+
+* [Task 36. Reverting Commits](#task-36-reverting-commits)
+* [Task 37. Resetting Staged Changes and Commits](#task-37-resetting-staged-changes-and-commits)
 
 
 ### Task 10. Moving Files in Git
 
+Performing tasks such as reorganizing files, changing file formats, and so on, requires that files and sometimes entire directories get moved. git mv handles this for you.
 
+ The ```git mv``` won’t overwrite an existing file; it displays an error instead. You can override this behavior by providing ```--force (or -f)```. __Be careful, though, because this makes Git overwrite the existing file. That’s dangerous if the existing file you’re overwriting isn’t tracked by Git. You have no way of getting that file back.__
 
+```Bash
 
+(base) Honeys-MacBook-Air:git apple$ git mv project/honey project/mv/honey
+(base) Honeys-MacBook-Air:git apple$ tree
+.
+├── Pragmatic_Guide_to_Git.md
+├── Pro_git.md
+├── README.md
+├── images
+│   ├── github_1.jpeg
+│   └── github_2.jpeg
+└── project
+    ├── amit
+    ├── angel
+    ├── foo.txt
+    ├── hello.txt
+    ├── mv
+    │   └── honey
+    ├── payal
+    ├── raj
+    └── riya
+
+3 directories, 13 files
+
+# Second example
+
+(base) Honeys-MacBook-Air:git apple$ git mv project/mv/honey project/mv/honeyDifferentMultiverse
+(base) Honeys-MacBook-Air:git apple$ tree
+.
+├── Pragmatic_Guide_to_Git.md
+├── Pro_git.md
+├── README.md
+├── images
+│   ├── github_1.jpeg
+│   └── github_2.jpeg
+└── project
+    ├── amit
+    ├── angel
+    ├── foo.txt
+    ├── hello.txt
+    ├── mv
+    │   └── honeyDifferentMultiverse
+    ├── payal
+    ├── raj
+    └── riya
+
+3 directories, 13 files
+
+```
 
 ### Task 11. Deleting Files in Git
 
+Files and directories sometimes outlive their usefulness. You can remove them from your working tree and tell Git to quit tracking them using the ```git rm``` command.
+
+__This doesn’t remove the file from your repository’s history__; it removes it only from your working tree going forward. You can always go back in the history of the repository and see the files or directories that have been removed.
+
+You call ```git rm``` and provide it with a filename to tell Git to remove it. Regex also works
+
+You must provide the ```-r``` option if you are deleting a directory and all the files under it. It tells Git to recursively delete all the files starting at the provided directory.
+
+Like most other actions in Git, ```git rm``` requires git commit to finalize its action. git rm stages the removal, and git commit finalizes it.
+
+```Bash
+(base) Honeys-MacBook-Air:git apple$ git rm -- outdated.py
+(base) Honeys-MacBook-Air:git apple$ git rm -r -- old/
+(base) Honeys-MacBook-Air:git apple$ git commit -m "remove the old/ directory"
 
 
+# Get a directory back after deleting it but before committing it.
+# This example uses the previous example where old/ is deleted using git rm, but before the staged deletes are committed. There are two steps. First, reset the index:
 
+(base) Honeys-MacBook-Air:git apple$ git reset HEAD -- old/ Unstaged changes after reset: M old/outdated.py
+# Second, check out the files from the repository:
+(base) Honeys-MacBook-Air:git apple$ git checkout -- old/
 
+# Force a file to be removed.
+(base) Honeys-MacBook-Air:git apple$ git rm -f -- outdated.py rm 'outdated.py'
+```
+
+Related Tasks
+
+* [Task 9. Undoing Uncommitted Changes](#task-9-undoing-uncommitted-changes)
+* [Task 10. Moving Files in Git](#task-10-moving-files-in-git)
 
 ### Task 12. Sharing Changes
+
+Remember that Git is different from most traditional version control systems; committing a change and sharing that change are two distinct tasks. Committing changes is covered in detail in [Task 7. Committing Changes](#task-7-committing-changes)
+
+Sending changes back to a remote repository to share is done via the git push command. Consider it the inverse of git pull; it sends your changes to the remote repository and merges those changes into the remote branch via a fast-forward merge, which is a merge where both branches share a common ancestor and only the branch being merged in has changes in it.
+
+```Bash
+
+(base) Honeys-MacBook-Air:git apple$ git push <remote name> <branch name>
+```
+
+* [Task 4. Creating a Local Copy of an Existing Repository](#task-4-creating-a-local-copy-of-an-existing-repository)
+* [Task 7. Committing Changes](#task-7-committing-changes)
+* [Task 19. Adding and Removing Remotes](#task-19-adding-and-removing-remotes)
+* [Task 20. Retrieving Remote Changes](#task-20-retrieving-remote-changes)
+* [Task 21. Retrieving Remote Changes, Part II](#task-21-retrieving-remote-changes-part-II)
+* [Task 22. Sending Changes to Remotes](#task-22-sending-changes-to-remotes)
 
 ## 3. Organizing Your Repository with Branches and Tags
 ### Task 13. Creating and Switching Branches
