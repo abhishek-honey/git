@@ -686,21 +686,110 @@ Switched to branch 'feature_learn_branches'
 
 ### Task 14. Viewing Branches
 
+You can view local, remote, or all branches depending on which parameters you pass to git branch. Calling git branch by itself shows you your local branches. You can add either the -r parameter or the -a parameter to view only the remote branches or all the branches, respectively.
 
+Your current branch always has an asterisk before it in the output from git branch. It’s colored green if you turned on color output
 
+It’s also useful to be able to find out which branches contain a particular commit. For example, you can track which branches contain a commit that has a known bug in it by using the --contains parameter.
 
-
-
+```Bash
+➜  git git:(feature_learn_branches) ✗ git branch
+* feature_learn_branches
+  master
+➜  git git:(feature_learn_branches) ✗ git branch -r
+  origin/master
+➜  git git:(feature_learn_branches) ✗ git branch -a
+* feature_learn_branches
+  master
+  remotes/origin/master
+```
 
 ### Task 15. Merging Commits Between Branches
 
+You have to merge changes from another branch into your current branch in order to be able to use them. The simplest way to do this is through git merge.
 
+git merge takes two options: the name of the other branch you want to merge and the optional local branch you want to merge into. You can leave off the current branch when you’re merging changes into your current branch.
 
+git tries to figure out how to merge all the changes, but sometimes it can’t. This is called a conflict and requires your intervention.
+
+```Bash
+
+➜  git git:(master) ✗ git checkout feature_learn_branches
+M	Pragmatic_Guide_to_Git.md
+Switched to branch 'feature_learn_branches'
+➜  git git:(feature_learn_branches) ✗
+➜  git git:(feature_learn_branches) ✗ git status
+On branch feature_learn_branches
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+	modified:   Pragmatic_Guide_to_Git.md
+
+no changes added to commit (use "git add" and/or "git commit -a")
+➜  git git:(feature_learn_branches) ✗
+➜  git git:(feature_learn_branches) ✗ git add *
+➜  git git:(feature_learn_branches) ✗
+➜  git git:(feature_learn_branches) ✗ git commit -m "Branch functionality"
+[feature_learn_branches 3ad5538] Branch functionality
+ 1 file changed, 17 insertions(+)
+➜  git git:(feature_learn_branches)
+➜  git git:(feature_learn_branches)
+➜  git git:(feature_learn_branches) git push
+fatal: The current branch feature_learn_branches has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin feature_learn_branches
+
+➜  git git:(feature_learn_branches)
+➜  git git:(feature_learn_branches) git push --set-upstream origin feature_learn_branches
+Enumerating objects: 5, done.
+Counting objects: 100% (5/5), done.
+Delta compression using up to 4 threads
+Compressing objects: 100% (3/3), done.
+Writing objects: 100% (3/3), 762 bytes | 254.00 KiB/s, done.
+Total 3 (delta 2), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (2/2), completed with 2 local objects.
+remote:
+remote: Create a pull request for 'feature_learn_branches' on GitHub by visiting:
+remote:      https://github.com/abhishek-honey/git/pull/new/feature_learn_branches
+remote:
+To https://github.com/abhishek-honey/git.git
+ * [new branch]      feature_learn_branches -> feature_learn_branches
+Branch 'feature_learn_branches' set up to track remote branch 'feature_learn_branches' from 'origin'.
+➜  git git:(feature_learn_branches)
+➜  git git:(feature_learn_branches)
+➜  git git:(feature_learn_branches) git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+➜  git git:(master)
+➜  git git:(master)
+➜  git git:(master) git merge feature_learn_branches
+Updating af20e64..3ad5538
+Fast-forward
+ Pragmatic_Guide_to_Git.md | 17 +++++++++++++++++
+ 1 file changed, 17 insertions(+)
+➜  git git:(master)
+➜  git git:(master) git push
+Total 0 (delta 0), reused 0 (delta 0), pack-reused 0
+To https://github.com/abhishek-honey/git.git
+   af20e64..3ad5538  master -> master
+```
 
 
 
 ### Task 16. Rewriting History by Rebasing
+Rebasing commits is the one concept in Git that has no counterpart inside the traditional version control world. Using git rebase, you can rewrite the history of a repository in a variety of ways. It is one of the most powerful commands in Git, which makes it one of the most dangerous.
 
+rebase takes a series of commits (normally a branch) and replays them on top of another commit (normally the last commit in another branch). The parent commit changes so all the commit IDs are recalculated. This can cause problems for other developers who have your code because the IDs don’t match up.
+
+There’s a simple rule of thumb with git rebase: use it as much as you want on local commits. Once you’ve shared changes with another developer, the headache is generally not worth the trouble.
+
+git rebase requires a clean working tree—that is, a working tree with no modified files. If you have changes that you’re not ready to commit, you can stash them until you’re done.
+
+A conflict might arise during the replaying of commits. Like a conflict during a regular merge, a conflict happens when two commits modify the same line of code. git rebase stops when this happens and asks you to fix the conflict (see Task 24, Handling Conflicts, on page 82) and then continue. You tell Git you’re ready with git rebase --continue.
+
+
+There’s always a safety net if you need to undo a rebase after it’s completed. Git points ORIG_HEAD at the commit before major changes like git rebase are run. You can use git reset to reset your repository back to that original state.
 
 
 
