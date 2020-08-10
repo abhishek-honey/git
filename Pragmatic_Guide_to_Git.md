@@ -663,8 +663,25 @@ Sending changes back to a remote repository to share is done via the git push co
 ## 3. Organizing Your Repository with Branches and Tags
 ### Task 13. Creating and Switching Branches
 
+Git’s convention is to treat the master branch as its main line of code. You can rename it to anything you want, but it’s a good idea to keep with the convention.
 
+You can also create branches starting at points in the history of the repository. Provide git branch with the name of the new branch you want to create followed by the commit ID or branch or tag name to create a branch at that point.
 
+Creating a new branch and checking it out immediately is common in Git. You can do both actions with one command: git checkout -b. Like git branch, it requires at least one parameter—the name of the new branch—and takes an optional second parameter specifying the point to create it from.
+
+```bash
+➜  git git:(master) git branch
+* master
+
+➜  git git:(master)
+➜  git git:(master)
+➜  git git:(master) git branch feature_learn_branches
+➜  git git:(master)
+➜  git git:(master)
+➜  git git:(master) git checkout feature_learn_branches
+Switched to branch 'feature_learn_branches'
+➜  git git:(feature_learn_branches)
+```
 
 
 ### Task 14. Viewing Branches
