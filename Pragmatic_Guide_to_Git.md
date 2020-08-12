@@ -608,6 +608,9 @@ Performing tasks such as reorganizing files, changing file formats, and so on, r
 
 ```
 
+Related Tasks
+* [Task 6. Staging Changes to Commit](#task-6-staging-changes-to-commit)
+* [Task 7. Committing Changes](#task-7-committing-changes)
 ### Task 11. Deleting Files in Git
 
 Files and directories sometimes outlive their usefulness. You can remove them from your working tree and tell Git to quit tracking them using the ```git rm``` command.
@@ -653,6 +656,8 @@ Sending changes back to a remote repository to share is done via the git push co
 (base) Honeys-MacBook-Air:git apple$ git push <remote name> <branch name>
 ```
 
+Related Tasks
+
 * [Task 4. Creating a Local Copy of an Existing Repository](#task-4-creating-a-local-copy-of-an-existing-repository)
 * [Task 7. Committing Changes](#task-7-committing-changes)
 * [Task 19. Adding and Removing Remotes](#task-19-adding-and-removing-remotes)
@@ -682,7 +687,11 @@ Creating a new branch and checking it out immediately is common in Git. You can 
 Switched to branch 'feature_learn_branches'
 ➜  git git:(feature_learn_branches)
 ```
-
+Related Tasks
+* [Task 14. Viewing Branches](#task-14-viewing-branches)
+* [Task 15. Merging Commits Between Branches](#task-15-merging-commits-between-branches)
+* [Task 16. Rewriting History by Rebasing](#task-16-rewriting-history-by-rebasing)
+* [Task 29. Moving Branches](#task-29-moving-branches)
 
 ### Task 14. Viewing Branches
 
@@ -704,11 +713,16 @@ It’s also useful to be able to find out which branches contain a particular co
   remotes/origin/master
 ```
 
+Related Tasks
+* [Task 13. Creating and Switching Branches](#task-13-creating-and-switching-branches)
+* [Task 15. Merging Commits Between Branches](#task-15-merging-commits-between-branches)
+
+
 ### Task 15. Merging Commits Between Branches
 
-You have to merge changes from another branch into your current branch in order to be able to use them. The simplest way to do this is through git merge.
+You have to merge changes from another branch into your current branch in order to be able to use them. The simplest way to do this is through ```git merge```.
 
-git merge takes two options: the name of the other branch you want to merge and the optional local branch you want to merge into. You can leave off the current branch when you’re merging changes into your current branch.
+```git merge``` takes two options: the name of the other branch you want to merge and the optional local branch you want to merge into. You can leave off the current branch when you’re merging changes into your current branch.
 
 git tries to figure out how to merge all the changes, but sometimes it can’t. This is called a conflict and requires your intervention.
 
@@ -776,9 +790,17 @@ To https://github.com/abhishek-honey/git.git
 ```
 
 
+Related Tasks
+* [Task 13. Creating and Switching Branches](#task-13-creating-and-switching-branches)
+* [Task 14. Viewing Branches](#task-14-viewing-branches)
+* [Task 16. Rewriting History by Rebasing](#task-16-rewriting-history-by-rebasing)
+* [Task 21. Retrieving Remote Changes, Part II](#task-21-retrieving-remote-changes-part-II)
+* [Task 24. Handling Conflicts](#task-24-handling-conflicts)
+* [Task 25. Handling Conflicts with a GUI](#task-25-handling-conflicts-with-a-gui)
+
 
 ### Task 16. Rewriting History by Rebasing
-Rebasing commits is the one concept in Git that has no counterpart inside the traditional version control world. Using git rebase, you can rewrite the history of a repository in a variety of ways. It is one of the most powerful commands in Git, which makes it one of the most dangerous.
+Rebasing commits is the one concept in Git that has no counterpart inside the traditional version control world. Using ```git rebase```, you can rewrite the history of a repository in a variety of ways. It is one of the most powerful commands in Git, which makes it one of the most dangerous.
 
 rebase takes a series of commits (normally a branch) and replays them on top of another commit (normally the last commit in another branch). The parent commit changes so all the commit IDs are recalculated. This can cause problems for other developers who have your code because the IDs don’t match up.
 
@@ -791,20 +813,67 @@ A conflict might arise during the replaying of commits. Like a conflict during a
 
 There’s always a safety net if you need to undo a rebase after it’s completed. Git points ORIG_HEAD at the commit before major changes like git rebase are run. You can use git reset to reset your repository back to that original state.
 
+```Bash
+git git:(feature_learn_branches) git rebase master
+First, rewinding head to replay your work on top of it... Applying: simple commit
 
+# Undo a rebase after it completes.
+git git:(feature_learn_branches) git reset --hard ORIG_HEAD
+HEAD is now at e9f9fdc update the README
+```
 
-
+Related Tasks
+* [Task 15. Merging Commits Between Branches](#task-15-merging-commits-between-branches)
+* [Task 24. Handling Conflicts](#task-24-handling-conflicts)
+* [Task 26. Temporarily Hiding Changes](#task-26-temporarily-hiding-changes)
+* [Task 37. Resetting Staged Changes and Commits](#task-37-resetting-staged-changes-and-commits)
 
 
 ### Task 17. Deleting Branches
 
 
+Branches can, and normally do, outlive their usefulness. Once you no longer need one, you can delete it from your repository. Remember, branches in Git are pointers to a commit. Deleting a branch doesn’t delete any commits, just the named pointer that refers to that commit.
 
+Since tags and branches both point to a single commit, you can tag your release and then delete the release branch. You can always create a new branch from the tag later if you need to make a change and then retag the new version, and the history will look like the branch had always been there.
 
+You can delete a branch with git branch -d. You must provide the branch name you want to delete. Git warns you if the branch you are trying to delete has not been merged into the current branch.
+
+You can override this behavior by using -D (capital D). This tells Git that you want to delete the branch even if it hasn’t been merged in.
+
+```Bash
+git git:(feature_learn_branches) git branch -d experiment Deleted branch experiment (was e9f9fdc).
+
+# Delete a branch that hasn’t been merged into the current branch.
+git git:(feature_learn_branches) git branch -D experiment Deleted branch experiment (was e9f9fdc).
+```
+Related Tasks
+* [Task 18. Tagging Milestones](#task-18-tagging-milestones)
 
 
 ### Task 18. Tagging Milestones
 
+You need to make milestones in your projects, each slightly different, such as for one, its weekly iterations, and for another, its version numbers. You can use git tag to handle this.
+
+git tag creates a read-only marker within the repository. You can treat tags like branch names, except you can’t check them out and start committing to them. You can create a new branch from a tag, however.
+
+```Bash
+# List all tags.
+git git:(feature_learn_branches) git tag
+v0.1
+v0.2
+
+# Tag the latest commit as version 1.0 in the current branch.
+git git:(feature_learn_branches) git tag v1.0
+git git:(feature_learn_branches)
+
+# Create a tag called beta1 from the next to last commit.
+git git:(feature_learn_branches) git tag beta1 HEAD^
+git git:(feature_learn_branches)
+
+````
+
+Related Tasks
+* [Task 23. Handling Remote Tags and Branches](#task-23-handling-remote-tags-and-branches)
 ## 4. Working with a Team
 ### Task 19. Adding and Removing Remotes
 
